@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../css/normalize.css" />
-    <link rel="stylesheet" href="../../css/icons.css" />
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/sidebar.css" />
-    <link rel="stylesheet" href="../../css/adminMain.css" />
+    <link rel="stylesheet" href="../../css/adminForm.css" />
   </head>
   <body id="body">
     <header>
@@ -19,7 +20,7 @@
         <div class="toggle-btn">
           <span class="material-icons">&#xe5d2;</span>
         </div>
-        
+
         <nav class="nav">
           <div class="nav__profile">
             <img
@@ -30,8 +31,8 @@
             <p class="nav__profile-name">Aron Yactayo</p>
           </div>
           <ul class="nav__list grid">
-            <li class="nav__item nav__item--active">
-              <a class="nav__link nav__link--active" href="adminSummary.html">
+            <li class="nav__item">
+              <a class="nav__link" href="adminSummary.html">
                 <span class="material-icons">&#xe85c;</span>
                 <span class="nav__link-text">Summary</span>
               </a>
@@ -58,8 +59,8 @@
               </a>
             </li>
 
-            <li class="nav__item">
-              <a class="nav__link" href="adminProfile.html">
+            <li class="nav__item nav__item--active">
+              <a class="nav__link nav__link--active" href="adminProfile.html">
                 <span class="material-icons">&#xe8b8;</span>
                 <span class="nav__link-text">Profile</span>
               </a>
@@ -73,71 +74,68 @@
             </li>
           </ul>
         </nav>
-        
       </aside>
     </header>
 
-    <main class="summary">
-      <h1 class="summary__page">Summary</h1>
-      <div class="summary__content summary__grid">
-        <div class="summary__card">
-          <div class="card__content card__clients">
-            <div class="card__picture">
-              <span class="material-icons">&#xe7fb;</span>
-            </div>
-            <p class="card__title">N° of Clients</p>
-            <h2 class="card__value quantity__client">...</h2>
-          </div>
-          <div class="card__content card__income">
-            <div class="card__picture">
-              <span class="material-icons">&#xf041;</span>
-            </div>
-            <p class="card__title">Income</p>
-            <h2 class="card__value">$1200</h2>
-          </div>
-          <div class="card__content card__sales">
-            <div class="card__picture">
-              <span class="material-icons">&#xe854;</span>
-            </div>
-            <p class="card__title">N° of Sales</p>
-            <h2 class="card__value">12</h2>
+    <main class="view">
+      <h1 class="view__data-page">Profile</h1>
+      <div class="view__data-grid">
+        <div class="view__data-img">
+          <form class="form__img" enctype="multipart/form">
+            <!--input-->
+            <input type="file">
+            <img src="../../img/profile.jpg" alt="" />
+          </form>
+          <div class="view__data">
+            <p class="view__data-name">Aron Yactayo</p>
+            <p class="view__data-email">sebas@gmail.com</p>
           </div>
         </div>
 
-        <section class="summary__sales container">
-          <div class="section__title">
-            <span class="summary__item"></span>
-            <h2 class="sale__title-text">Weekly Sales</h2>
+        <form class="form__data">
+          <div class="field__data">
+            <span class="material-icons">&#xe7fd;</span>
+            <input class="form__input" id="name" type="text" placeholder=" " />
+            <label class="form__label" for="name">Name</label>
           </div>
-          <div class="sales__chart">
-            <img src="../../img/stadistcs.png" alt="img">
-          </div>
-        </section>
 
-        <section class="summary__clients container">
-          <div class="section__title">
-            <span class="summary__item"></span>
-            <h2 class="clients__title-text">New Clients</h2>
+          <div class="field__data">
+            <span class="material-icons">&#xe7fd;</span>
+            <input class="form__input" id="lastname" type="text" placeholder=" " />
+            <label class="form__label" for="lastname">Lastname</label>
           </div>
-          <ul class="clients__list">
-            <!-- <li class="client__item">
-              <div class="client__data">
-                <img class="client__image" src="../../img/profile.jpg" alt="img">
-                <div class="client__info">
-                  <p class="client__name">Yactayo</p>
-                  <span class="client__email">sebastian@gmail.com</span>
-                </div>
-              </div>
-            </li> -->
-          </ul>
-        </section>
 
+          <div class="field__data">
+            <span class="material-icons">&#xe0d0;</span>
+            <input class="form__input" id="dni" type="text" placeholder=" " />
+            <label class="form__label" for="dni">DNI</label>
+          </div>
+
+          <div class="field__data">
+            <span class="material-icons">&#xe0be;</span>
+            <input class="form__input" id="email" type="text" placeholder=" " />
+            <label class="form__label" for="email">Email</label>
+          </div>
+
+          <div class="field__data">
+            <span class="material-icons">&#xe897;</span>
+            <input class="form__input" id="password" type="text" placeholder=" " />
+            <label class="form__label" for="password">Password</label>
+          </div>
+
+          <div class="field__data">
+            <span class="material-icons">&#xe0b0;</span>
+            <input class="form__input" id="phone" type="text" placeholder=" " />
+            <label class="form__label" for="phone">Phone</label>
+          </div>
+
+          <input class="form__input-submit" type="submit" value="Update Data">
+        </form>
       </div>
     </main>
 
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
-    <script src="../../js/controller/admin/loadSummary.js"></script>
     <script src="../../js/controller/admin/adminLogout.js"></script>
   </body>
 </html>

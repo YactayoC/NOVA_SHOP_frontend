@@ -57,10 +57,12 @@
   transition: transform 0.3s, color 0.3s;
 }
 
+/* Si no hay placeholder cambiar el color al input */
 .form__input:not(:placeholder-shown) {
   color: #706c6c;
 }
 
+/* Si el input esta activo y  */
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown) + .form__label {
   transform: translateY(-20px) scale(0.8);

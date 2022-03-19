@@ -6,10 +6,10 @@ function validationLogin(email, password) {
   }
 }
 
-function validationRegister(name, lastname, phone, email, password) {
+function validationRegister(name, lastname, dni, phone, email, password) {
   if (
-    [name, lastname, phone, email, password].includes("") ||
-    (name, lastname, phone, email, password).trim() === ""
+    [name, lastname, dni, phone, email, password].includes("") ||
+    (name, lastname, dni, phone, email, password).trim() === ""
   ) {
     return false;
   } else {

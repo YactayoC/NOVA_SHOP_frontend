@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../css/normalize.css" />
     <link rel="stylesheet" href="../../css/icons.css" />
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/sidebar.css" />
-    <link rel="stylesheet" href="../../css/adminMain.css" />
+    <link rel="stylesheet" href="../../css/adminTable.css" />
   </head>
   <body id="body">
     <header>
@@ -19,7 +21,7 @@
         <div class="toggle-btn">
           <span class="material-icons">&#xe5d2;</span>
         </div>
-        
+
         <nav class="nav">
           <div class="nav__profile">
             <img
@@ -30,8 +32,8 @@
             <p class="nav__profile-name">Aron Yactayo</p>
           </div>
           <ul class="nav__list grid">
-            <li class="nav__item nav__item--active">
-              <a class="nav__link nav__link--active" href="adminSummary.html">
+            <li class="nav__item">
+              <a class="nav__link" href="adminSummary.html">
                 <span class="material-icons">&#xe85c;</span>
                 <span class="nav__link-text">Summary</span>
               </a>
@@ -51,8 +53,8 @@
               </a>
             </li>
 
-            <li class="nav__item">
-              <a class="nav__link" href="adminProducts.html">
+            <li class="nav__item  nav__item--active">
+              <a class="nav__link   nav__link--active" href="adminProducts.html">
                 <span class="material-icons">&#xe1bd;</span>
                 <span class="nav__link-text">Products</span>
               </a>
@@ -73,71 +75,71 @@
             </li>
           </ul>
         </nav>
-        
       </aside>
     </header>
 
-    <main class="summary">
-      <h1 class="summary__page">Summary</h1>
-      <div class="summary__content summary__grid">
-        <div class="summary__card">
-          <div class="card__content card__clients">
-            <div class="card__picture">
-              <span class="material-icons">&#xe7fb;</span>
-            </div>
-            <p class="card__title">N° of Clients</p>
-            <h2 class="card__value quantity__client">...</h2>
+    <main class="main">
+      <h1 class="name__page">Products</h1>
+      <section class="main__table container">
+        <div class="table__header">
+          <div class="table__title">
+            <span class="table__item"></span>
+            <h2 class="table__title-text">List</h2>
           </div>
-          <div class="card__content card__income">
-            <div class="card__picture">
-              <span class="material-icons">&#xf041;</span>
-            </div>
-            <p class="card__title">Income</p>
-            <h2 class="card__value">$1200</h2>
-          </div>
-          <div class="card__content card__sales">
-            <div class="card__picture">
-              <span class="material-icons">&#xe854;</span>
-            </div>
-            <p class="card__title">N° of Sales</p>
-            <h2 class="card__value">12</h2>
-          </div>
+
+          <form class="table__search" id="search">
+            <input class="search__input" type="text" placeholder="Search Product" />
+            <button class="search__button" type="submit" value="Search">
+              Search
+              <span class="material-icons">&#xe8b6;</span>
+            </button>
+          </form>
         </div>
 
-        <section class="summary__sales container">
-          <div class="section__title">
-            <span class="summary__item"></span>
-            <h2 class="sale__title-text">Weekly Sales</h2>
+        <div class="table__content">
+          
+          <div class="table__options">
+            <button class="option__filter">All Products
+              <span>8</span>
+            </button>
           </div>
-          <div class="sales__chart">
-            <img src="../../img/stadistcs.png" alt="img">
-          </div>
-        </section>
 
-        <section class="summary__clients container">
-          <div class="section__title">
-            <span class="summary__item"></span>
-            <h2 class="clients__title-text">New Clients</h2>
-          </div>
-          <ul class="clients__list">
-            <!-- <li class="client__item">
-              <div class="client__data">
-                <img class="client__image" src="../../img/profile.jpg" alt="img">
-                <div class="client__info">
-                  <p class="client__name">Yactayo</p>
-                  <span class="client__email">sebastian@gmail.com</span>
-                </div>
-              </div>
-            </li> -->
-          </ul>
-        </section>
+          <div class="table__body">
+            <div class="table__data">
+              <ul class="data__header data__header-products">
+                <li class="header__image">Image</li>
+                <li class="header__name">Product</li>
+                <li class="header__stock">Stock</li>
+                <li class="header__price">Price</li>
+                <li class="header__category">Category</li>
+                <li class="header__edit">Edit</li>
+                <li class="header__remove">Remove</li>
+              </ul>
+              <!-- <ul class="data__items data__items-products">
+                <li class="data__image">
+                  <img src="../../img/products/aorus-k1.webp" alt="img">
+                </li>
+                <li class="data__name">Teclado Aorus</li>
+                <li class="data__stock">5</li>
+                <li class="data__price">S/15.00</li>
+                <li class="data__category">Keyboard</li>
+                <li class="data__edit">
+                  <span class="material-icons">&#xe3c9;</span>
+                </li>
+                <li class="data__remove">
+                  <span class="material-icons">&#xe872;</span>
+                </li>
+              </ul> -->
+            </div>
 
-      </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
-    <script src="../../js/controller/admin/loadSummary.js"></script>
+    <script src="../../js/controller/admin/loadProducts.js"></script>
     <script src="../../js/controller/admin/adminLogout.js"></script>
   </body>
 </html>
