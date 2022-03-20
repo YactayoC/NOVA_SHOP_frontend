@@ -1,9 +1,13 @@
 const ulList = document.querySelector(".clients__list");
+const divCard = document.querySelector(".card__content.card__clients");
+const quantityClient = document.querySelector(".quantity__client");
+
+const divSpinner = document.createElement("div");
 
 document.addEventListener("DOMContentLoaded", loadClients);
 
-async function loadClients(e) {
-  e.preventDefault();
+async function loadClients() {
+  spinner();
 
   try {
     const token = localStorage.getItem("token");
@@ -19,6 +23,7 @@ async function loadClients(e) {
     await fetch("http://localhost:4000/api/employees/clients", config)
       .then((answer) => answer.json())
       .then((results) => {
+        divSpinner.style.display = "none";
         showClients(results);
         showQuantity(results);
       });
@@ -34,7 +39,6 @@ function showClients(results) {
 }
 
 function showQuantity(results) {
-  const quantityClient = document.querySelector(".quantity__client");
   quantityClient.textContent = results.length;
 }
 
@@ -68,4 +72,19 @@ function createHTML(result) {
   divData.appendChild(divInfo);
   divInfo.appendChild(pLastName);
   divInfo.appendChild(spanEmail);
+}
+
+function spinner() {
+  divSpinner.innerHTML = `
+  <div class="sk-chase">
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+  </div>`;
+
+  divSpinner.style.margin = "0 auto";
+  ulList.appendChild(divSpinner);
 }

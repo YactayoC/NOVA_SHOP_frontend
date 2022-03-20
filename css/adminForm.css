@@ -61,6 +61,11 @@
   box-shadow: 0 0 0 2px;
   padding: 1rem;
   text-align: start;
+  transition: color 0.3s ease;
+}
+
+.field__data-focus {
+  color: #ff7502;
 }
 
 .form__input {

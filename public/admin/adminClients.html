@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/icons.css" />
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/sidebar.css" />
+    <link rel="stylesheet" href="../../css/spinner.css" />
     <link rel="stylesheet" href="../../css/adminTable.css" />
   </head>
   <body id="body">
@@ -29,7 +30,7 @@
               src="../../img/profile.jpg"
               alt="img"
             />
-            <p class="nav__profile-name">Aron Yactayo</p>
+            <p class="nav__profile-name"> </p>
           </div>
           <ul class="nav__list grid">
             <li class="nav__item">
@@ -87,11 +88,12 @@
             <h2 class="table__title-text">List</h2>
           </div>
 
-          <form class="table__search" id="search">
+          <form class="table__search" id="form-search">
             <input
               class="search__input"
               type="text"
               placeholder="Search Client"
+              id="input-search"
             />
             <button class="search__button" type="submit" value="Search">
               Search
@@ -104,13 +106,14 @@
           <div class="table__options">
             <button class="option__filter">
               All Clients
-              <span>8</span>
+              <span id="all"></span>
             </button>
           </div>
 
           <div class="table__body">
             <div class="table__data">
               <ul class="data__header data__gap">
+                <li class="header__profile">Profile</li>
                 <li class="header__name">Name</li>
                 <li class="header__lastname">Lastname</li>
                 <li class="header__dni">DNI</li>
@@ -119,6 +122,9 @@
                 <li class="header__district">District</li>
               </ul>
               <!-- <ul class="data__items data__gap">
+                <li class="data__profile">
+                  <img src="../../img/profile.jpg" alt="img">
+                </li>
                 <li class="data__name">Jhon</li>
                 <li class="data__lastname">Doe</li>
                 <li class="data__dni">74433077</li>
@@ -134,7 +140,9 @@
 
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
-    <script src="../../js/controller/admin/loadClients.js"></script>
+    <script src="../../js/helpers/getProfile.js"></script>
+    <script type="module" src="../../js/controller/admin/loadClients.js"></script>
     <script src="../../js/controller/admin/adminLogout.js"></script>
+
   </body>
 </html>

@@ -28,7 +28,7 @@
               src="../../img/profile.jpg"
               alt="img"
             />
-            <p class="nav__profile-name">Aron Yactayo</p>
+            <p class="nav__profile-name"> </p>
           </div>
           <ul class="nav__list grid">
             <li class="nav__item">
@@ -83,12 +83,12 @@
         <div class="view__data-img">
           <form class="form__img" enctype="multipart/form">
             <!--input-->
-            <input type="file">
+            <!-- <input type="file"> -->
             <img src="../../img/profile.jpg" alt="" />
           </form>
           <div class="view__data">
-            <p class="view__data-name">Aron Yactayo</p>
-            <p class="view__data-email">sebas@gmail.com</p>
+            <p id="name-profile" class="view__data-name"></p>
+            <p id="email-profile" class="view__data-email"></p>
           </div>
         </div>
 
@@ -107,19 +107,19 @@
 
           <div class="field__data">
             <span class="material-icons">&#xe0d0;</span>
-            <input class="form__input" id="dni" type="text" placeholder=" " />
+            <input class="form__input" id="dni" type="text" placeholder=" " disabled />
             <label class="form__label" for="dni">DNI</label>
           </div>
 
           <div class="field__data">
             <span class="material-icons">&#xe0be;</span>
-            <input class="form__input" id="email" type="text" placeholder=" " />
+            <input class="form__input" id="email" type="email" placeholder=" " disabled />
             <label class="form__label" for="email">Email</label>
           </div>
 
           <div class="field__data">
             <span class="material-icons">&#xe897;</span>
-            <input class="form__input" id="password" type="text" placeholder=" " />
+            <input class="form__input" id="password" type="password" placeholder=" " autocomplete="on" />
             <label class="form__label" for="password">Password</label>
           </div>
 
@@ -136,6 +136,7 @@
 
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
+    <script src="../../js/controller/admin/loadProfile.js"></script>
     <script src="../../js/controller/admin/adminLogout.js"></script>
   </body>
 </html>

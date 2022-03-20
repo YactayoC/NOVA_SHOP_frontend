@@ -12,6 +12,7 @@
   border-radius: 10px;
   margin: 0;
   padding: 1rem;
+  width: max-content;
 }
 
 /* table header */
@@ -97,19 +98,28 @@
   background: rgba(137, 137, 149, 0.2);
   border-radius: 8px 8px 0px 0px;
   color: #ff7502;
+  display: flex;
   font-size: 1.5rem;
   font-weight: 700;
-  gap: 1rem;
+  gap: 3rem;
   padding: 0.75rem 0.75rem 0.75rem 2rem;
 }
 
 .option__filter {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   border: none;
   background: transparent;
   color: #ff7502;
   cursor: pointer;
   font-weight: 700;
-  padding-block: 0.5rem;
+}
+
+.option__filter .material-icons {
+  font-size: 19px;
+  background: none;
+  padding: 0;
 }
 
 .option__filter span {
@@ -123,7 +133,7 @@
 
 .table__data {
   overflow: scroll;
-
+  display: grid;
   max-height: 50rem;
 }
 
@@ -144,7 +154,7 @@
 
 .data__header {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   font-weight: 700;
   font-size: 1.5rem;
@@ -154,7 +164,7 @@
   border-radius: 8px;
   cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   align-items: center;
   font-size: 1.5rem;
@@ -219,6 +229,12 @@
 }
 
 /* employees */
+.data__items-employees:hover {
+  background-color: #fff;
+  cursor: unset;
+  user-select: text;
+}
+
 .data__profile {
   display: grid;
 }
@@ -230,5 +246,9 @@
 
 .data__gap {
   gap: 1rem;
+}
+
+ul li {
+  text-align: center;
 }
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/icons.css" />
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/sidebar.css" />
+    <link rel="stylesheet" href="../../css/spinner.css" />
     <link rel="stylesheet" href="../../css/adminTable.css" />
   </head>
   <body id="body">
@@ -29,7 +30,7 @@
               src="../../img/profile.jpg"
               alt="img"
             />
-            <p class="nav__profile-name">Aron Yactayo</p>
+            <p class="nav__profile-name"> </p>
           </div>
           <ul class="nav__list grid">
             <li class="nav__item">
@@ -87,8 +88,13 @@
             <h2 class="table__title-text">List</h2>
           </div>
 
-          <form class="table__search" id="search">
-            <input class="search__input" type="text" placeholder="Search Employee" />
+          <form class="table__search" id="form-search">
+            <input
+              class="search__input"
+              type="text"
+              placeholder="Search Employee"
+              id="input-search"
+            />
             <button class="search__button" type="submit" value="Search">
               Search
               <span class="material-icons">&#xe8b6;</span>
@@ -97,10 +103,25 @@
         </div>
 
         <div class="table__content">
-          
           <div class="table__options">
-            <button class="option__filter">All Products
-              <span>8</span>
+            <button class="option__filter">
+              All Employees
+              <span id="all"></span>
+            </button>
+
+            <button class="option__filter">
+              Seller
+              <span>0</span>
+            </button>
+
+            <button class="option__filter">
+              Delivery Man
+              <span>0</span>
+            </button>
+
+            <button class="option__filter">
+              <span class="material-icons">&#xe148;</span>
+              Add Employee
             </button>
           </div>
 
@@ -115,7 +136,7 @@
                 <li class="header__edit">Edit</li>
                 <li class="header__remove">Remove</li>
               </ul>
-              <ul class="data__items data__items-products">
+              <!-- <ul class="data__items data__items-employees">
                 <li class="data__profile">
                   <img src="../../img/profile.jpg" alt="img">
                 </li>
@@ -129,9 +150,8 @@
                 <li class="data__remove">
                   <span class="material-icons">&#xe872;</span>
                 </li>
-              </ul>
+              </ul> -->
             </div>
-
           </div>
         </div>
       </section>
@@ -139,7 +159,11 @@
 
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
-    <script src="../../js/controller/admin/loadEmployees.js"></script>
+    <script src="../../js/helpers/getProfile.js"></script>
+    <script
+      type="module"
+      src="../../js/controller/admin/loadEmployees.js"
+    ></script>
     <script src="../../js/controller/admin/adminLogout.js"></script>
   </body>
 </html>
