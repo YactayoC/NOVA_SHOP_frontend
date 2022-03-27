@@ -1,5 +1,5 @@
-import { validationLogin } from "../../helpers/validation.js";
-import { addTokenAdmin } from "../../helpers/optionToken.js";
+import { validationLogin } from "../helpers/validation.js";
+import { addTokenAdmin } from "../helpers/optionToken.js";
 
 const form = document.getElementById("form");
 const emailData = document.getElementById("email");

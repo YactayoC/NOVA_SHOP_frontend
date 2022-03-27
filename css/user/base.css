@@ -4,6 +4,7 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -11,10 +12,8 @@ body {
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
-    background-image: url(../img/city3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90rem;
+    background-color: #020104;
+    margin: 0;
 }
 
 img {
@@ -26,7 +25,24 @@ a {
 }
 
 .container {
-    max-width: 120rem;
+    max-width: 130rem;
     margin: 0 auto;
     width: 90%;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 1rem;
+    background-color: #8446f7;
+    margin: 0 auto;
+}
+
+option {
+    background-color: #020104;
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
 }

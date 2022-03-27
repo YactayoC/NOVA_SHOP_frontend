@@ -1,9 +1,8 @@
-const divData = document.querySelector(".table__data");
-
 document.addEventListener("DOMContentLoaded", loadData);
 
 async function loadData() {
   try {
+    const id = localStorage.getItem("id");
     const token = localStorage.getItem("token");
     if (!token) return;
 
@@ -14,7 +13,7 @@ async function loadData() {
       },
     };
 
-    await fetch(`http://localhost:4000/api/employees/profile`, config)
+    await fetch(`http://localhost:4000/api/employees/profile/${id}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         dataPublic(results);

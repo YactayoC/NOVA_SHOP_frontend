@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova - Products</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/user/base.css" />
+    <link rel="stylesheet" href="../../css/user/bar.css" />
+    <link rel="stylesheet" href="../../css/user/products.css" />
+    <link rel="stylesheet" href="../../css/user/modalAdd.css" />
+    <link rel="stylesheet" href="../../css/user/spinner.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <nav class="nav">
+          <a class="header__img nav__link" href="home.html">
+            <img class="img" src="../../img/webpack.png" alt="img" />
+          </a>
+          <a class="nav__link" href="home.html">Home</a>
+          <a class="nav__link nav__link--active" href="products.html"
+            >Products</a
+          >
+          <a class="nav__link nav__link--flex" href="cart.html">
+            <span class="material-icons">&#xe8cc;</span> Cart</a
+          >
+        </nav>
+        <div class="header__buttons">
+          <a class="button__login" href="login.html">Login</a>
+          <a class="button__register" href="register.html">Register</a>
+          <button class="button__profile button--hide">
+            <span class="material-icons">&#xe853;</span>
+            Sebastian Yactayo
+          </button>
+          <button class="button__logout button--hide">
+            <span class="material-icons">&#xe8ac;</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="products container">
+      <div class="products__grid">
+        <form id="form-search" class="form__products">
+          <div class="form__group">
+            <input
+              class="form__input"
+              type="text"
+              id="input-search"
+              placeholder="Search Product"
+            />
+          </div>
+          <div class="form__group">
+            <select class="form__select" id="form-select">
+              <option value="" selected disabled>Select Category</option>
+              <option value="Keyboard">Keyboard</option>
+              <option value="Mouse">Mouse</option>
+              <option value="Printer">Printer</option>
+              <option value="Monitor">Monitor</option>
+            </select>
+          </div>
+        </form>
+        <h2 class="search__heading display-none"> </h2>
+        <div class="products__card">
+          <!-- <div class="card">
+            <div class="card__add">
+              <span class="material-icons">&#xe145;</span>
+            </div>
+            <div class="card__img">
+              <img src="../../img/products/aorus-k1.png" alt="img" />
+            </div>
+            <div class="card__info">
+              <h4 class="product__title">Teclado Aorus KGB12</h4>
+              <div class="product__description">
+                <p class="product__stock">Stock: 4</p>
+                <p class="product__price">$10.00</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
+
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__close">
+          <span class="material-icons">&#xe888;</span>
+        </div>
+        <div class="modal__img">
+          <img src="../../img/products/aorus-k1.png" alt="img" />
+        </div>
+        <div class="modal__info">
+          <p class="info__text">
+            Was Added: 
+            <span class="info__product">Teclado Aorus Razer</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../js/user/products.js"></script>
+    <script src="../../js/helpers/modalProduct.js"></script>
+    <script src="../../js/user/logout.js"></script>
+  </body>
+</html>

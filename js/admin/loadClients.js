@@ -1,4 +1,4 @@
-import eventSearch from "../../helpers/searchInput.js";
+import eventSearch from "../helpers/searchInput.js";
 
 const divData = document.querySelector(".table__data");
 const divSpinner = document.createElement("div");

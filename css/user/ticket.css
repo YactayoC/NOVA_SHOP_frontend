@@ -1,0 +1,125 @@
+body {
+    background-color: #fff;
+}
+
+.ticket {
+    display: flex;
+}
+
+.ticket__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem 4rem;
+    gap: 3rem;
+    border-radius: 10px;
+}
+
+.ticket__container .material-icons {
+    cursor :pointer;
+    font-size: 4rem;
+    text-align: right;
+    color: red;
+    margin-left: 40rem;
+}
+
+.ticket__img img {
+    width: 10rem;
+}
+
+.ticket__content {
+    width: 100%;
+}
+
+.content__heading {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.content__city {
+    text-align: center;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.content__client {
+    text-align: left;
+    font-size: 1.8rem;
+}
+
+.ticket__table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.table__header {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    justify-items: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.table__body {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.ticket__total {
+    width: 100%;
+    text-align: right;
+    padding-right: 1.5rem;
+    font-size: 1.8rem;
+}
+
+@media print {
+    .generate {
+        display: none;
+    }
+
+    #close {
+        display: none;
+    }
+}
+
+.ticket__flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: unset;
+    border: 1px solid #343A40;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #343A40;
+    color: #fff;
+}
+

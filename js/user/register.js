@@ -1,4 +1,4 @@
-import { validationRegister } from "../../helpers/validation.js";
+import { validationRegister } from "../helpers/validation.js";
 
 const form = document.getElementById("form");
 const nameData = document.getElementById("name");

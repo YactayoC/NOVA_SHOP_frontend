@@ -1,0 +1,138 @@
+.img {
+  width: 5rem;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    gap: 8rem;
+  }
+}
+
+.nav__link {
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav__link--flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__link::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  bottom: -0.5rem;
+  background-color: #8446f7;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.header__img.nav__link:hover::before {
+  transform: scaleX(0);
+}
+
+.nav__link:hover::before {
+  transform: scaleX(1);
+}
+
+@media (min-width: 768px) {
+  .nav__link {
+    font-size: 1.8rem;
+  }
+}
+
+.nav__link:hover {
+  color: #8446f7;
+}
+
+.nav__link--active {
+  color: #8446f7;
+}
+
+.header__buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header__buttons {
+    gap: 4rem;
+  }
+}
+
+.button__login,
+.button__register,
+.button__profile,
+.button__logout {
+  color: #fff;
+  background-color: unset;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1rem 5rem;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.button__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 3rem;
+}
+
+.button__logout {
+  padding: 1rem 3rem;
+}
+
+.button__logout:hover {
+  transform: scale(1.1);
+  background-color: #eb3c45;
+  border: 1px solid #eb3c45;
+}
+
+.button__login:hover,
+.button__register:hover,
+.button__profile:hover {
+  transform: scale(1.1);
+  background-color: #5f2fbb;
+  border: 1px solid #5f2fbb;
+}
+
+.button--hide {
+  display: none;
+}

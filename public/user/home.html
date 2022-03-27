@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/user/base.css" />
+    <link rel="stylesheet" href="../../css/user/bar.css" />
+    <link rel="stylesheet" href="../../css/user/home.css" />
+    <link rel="stylesheet" href="../../css/user/modalAdd.css" />
+    <link rel="stylesheet" href="../../css/user/spinner.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <nav class="nav">
+          <a class="header__img nav__link" href="home.html">
+            <img class="img" src="../../img/webpack.png" alt="img" />
+          </a>
+          <a class="nav__link nav__link--active" href="home.html">Home</a>
+          <a class="nav__link" href="products.html">Products</a>
+          <a class="nav__link nav__link--flex" href="cart.html">
+            <span class="material-icons">&#xe8cc;</span> Cart</a
+          >
+        </nav>
+        <div class="header__buttons">
+          <a class="button__login" href="login.html">Login</a>
+          <a class="button__register" href="register.html">Register</a>
+          <button class="button__profile button--hide">
+            <span class="material-icons">&#xe853;</span>
+            
+          </button>
+          <button class="button__logout button--hide">
+            <span class="material-icons">&#xe8ac;</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main container">
+      <section class="about">
+        <div class="about__img">
+          <img src="../../img/home/imgHome.svg" alt="img" />
+        </div>
+      </section>
+
+      <section class="products">
+        <h2 class="products__heading">Latest products</h2>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <div class="card">
+                <div class="card__add">
+                  <span class="material-icons">&#xe145;</span>
+                </div>
+                <div class="card__img">
+                  <img src="../../img/products/aorus-k1.png" alt="img" />
+                </div>
+                <div class="card__info">
+                  <h4 class="product__title">Teclado Aorus KGB12</h4>
+                  <div class="product__description">
+                    <p class="product__stock">Stock: 4</p>
+                    <p class="product__price">Price: 10$</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <a class="products__more" href="products.html">See More</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__close">
+          <span class="material-icons">&#xe888;</span>
+        </div>
+        <div class="modal__img">
+          <img src="../../img/products/aorus-k1.png" alt="img" />
+        </div>
+        <div class="modal__info">
+          <p class="info__text">
+            Was Added: 
+            <span class="info__product">Teclado Aorus Razer</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../../js/user/swiper.js"></script>
+    <script src="../../js/user/home.js"></script>
+    <script src="../../js/helpers/modalProduct.js"></script>
+    <script src="../../js/user/logout.js"></script>
+  </body>
+</html>

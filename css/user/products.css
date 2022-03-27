@@ -1,0 +1,156 @@
+.products {
+  margin-block: 4rem;
+}
+
+.products__grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form__products {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.form__input {
+  background-color: unset;
+  color: #fff;
+  border: 2px solid #8446f7;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  outline: none;
+  text-align: center;
+}
+
+.form__select {
+  background-color: unset;
+  color: #fff;
+  border: 2px solid #8446f7;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  outline: none;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .form__input {
+    width: 70rem;
+    text-align: left;
+  }
+
+  .form__select {
+    width: 28rem;
+  }
+}
+
+.search__heading {
+    margin-top: 5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Products */
+.products__card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  margin-top: 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .products__card {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3rem;
+    }
+}
+
+.card {
+  align-items: center;
+  padding: 2rem;
+  background-color: #1d2136;
+  position: relative;
+  border-radius: 10px;
+  width: 65%;
+}
+
+@media (min-width: 768px) { 
+    .card {
+        width: 100%;
+    }
+}
+
+.card__add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 1.5rem 1.5rem;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.card__add span {
+  color: #000;
+  z-index: 100;
+}
+
+.card__img {
+  margin-top: 8rem;
+}
+.card__img img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.card__img img:hover {
+  transform: scale(1.1);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #dad8d8;
+  margin-top: 2rem;
+  width: 100%;
+  line-height: 0.6;
+}
+
+.product__title {
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 2rem 0 0 0;
+  line-height: 1;
+}
+
+.product__description {
+  color: #85899e;
+}
+
+.product__description {
+  font-size: 1.6rem;
+}
+
+.product__price {
+  font-size: 1.8rem;
+}

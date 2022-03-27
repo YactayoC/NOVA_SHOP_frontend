@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/base.css" />
-    <link rel="stylesheet" href="../../css/form.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/admin/base.css" />
+    <link rel="stylesheet" href="../../css/admin/form.css" />
   </head>
   <body>
     <main class="main">
@@ -22,6 +25,7 @@
                 id="email"
                 type="email"
                 placeholder=" "
+                required
               />
               <label class="form__label" for="email">Email</label>
               <span class="form__line"></span>
@@ -34,6 +38,7 @@
                 type="password"
                 placeholder=" "
                 autocomplete="on"
+                required
               />
               <label class="form__label" for="password">Password</label>
               <span class="form__line"></span>
@@ -43,9 +48,9 @@
         </form>
       </div>
     </main>
-    <footer>
-
-    </footer>
-    <script type="module" src="../../js/controller/admin/adminLogin.js"></script>
+    <script
+      type="module"
+      src="../../js/admin/adminLogin.js"
+    ></script>
   </body>
 </html>

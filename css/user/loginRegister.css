@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    background-image: url(../../img/city3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 130rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 1rem;
+    background-color: #8446f7;
+    margin: 0 auto;
+}
+
+option {
+    background-color: #020104;
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+}

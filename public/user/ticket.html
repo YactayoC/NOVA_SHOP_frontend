@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova - Ticket</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/user/base.css" />
+    <link rel="stylesheet" href="../../css/user/ticket.css" />
+  </head>
+  <body>
+    <main class="ticket container">
+
+      <div class="ticket__container">
+        <span id="close" class="material-icons">&#xe5cd;</span>
+        <div id="logo" class="ticket__img">
+            <a href="home.html">
+                <img src="../../img/webpack.png" alt="img" />
+            </a>
+          
+        </div>
+
+        <div class="ticket__content">
+          <h3 class="content__heading">Ticket of sale</h3>
+          <p class="content__city">Lima - Lima</p>
+          <p class="content__client"> </p>
+        </div>
+
+        <div class="ticket__table">
+          <ul class="table__header">
+            <li>Product</li>
+            <li>Quantity</li>
+            <li>Price</li>
+            <li>SubTotal</li>
+          </ul>
+
+          <!-- <ul class="table__body">
+            <li>Teclado Aorus</li>
+            <li>5</li>
+            <li><span>$</span> 50.00</li>
+            <li><span>$</span> 250.00</li>
+          </ul> -->
+
+        </div>
+        <p class="ticket__total"> </p>
+        <div class="ticket__flex">
+          <button class="generate" id="generatePDF">Download</button>
+          <button class="generate" id="print">Print</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../js/user/html2pdf.bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../../js/user/ticket.js"></script>
+    <script src="../../js/user/events.js"></script>
+  </body>
+</html>

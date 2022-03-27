@@ -10,11 +10,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/normalize.css" />
-    <link rel="stylesheet" href="../../css/icons.css" />
-    <link rel="stylesheet" href="../../css/base.css" />
-    <link rel="stylesheet" href="../../css/sidebar.css" />
-    <link rel="stylesheet" href="../../css/spinner.css" />
-    <link rel="stylesheet" href="../../css/adminTable.css" />
+    <link rel="stylesheet" href="../../css/admin/base.css" />
+    <link rel="stylesheet" href="../../css/admin/sidebar.css" />
+    <link rel="stylesheet" href="../../css/admin/spinner.css" />
+    <link rel="stylesheet" href="../../css/admin/adminTable.css" />
+    <link rel="stylesheet" href="../../css/admin/adminForm.css" />
+    <link rel="stylesheet" href="../../css/admin/modal.css" />
   </head>
   <body id="body">
     <header>
@@ -119,7 +120,7 @@
               <span>0</span>
             </button>
 
-            <button class="option__filter">
+            <button class="option__filter" data-id="add" id="add-employee">
               <span class="material-icons">&#xe148;</span>
               Add Employee
             </button>
@@ -127,6 +128,7 @@
 
           <div class="table__body">
             <div class="table__data">
+              
               <ul class="data__header data__header-products">
                 <li class="header__profile">Profile</li>
                 <li class="header__name">Name</li>
@@ -157,13 +159,99 @@
       </section>
     </main>
 
+    <section class="modal modal--hide">
+      <div class="modal__container">
+        <div class="modal__heading">
+          <h2 class="modal__heading--text"></h2>
+          <span class="material-icons material-icons--close">&#xe5cd;</span>
+        </div>
+        <form class="form__data form__grid" id="form-modal" method="POST">
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe7fd;</span>
+            <input
+              class="form__input form__input--modal"
+              id="name"
+              type="text"
+              placeholder=" "
+              required
+            />
+            <label class="form__label" for="name">Name</label>
+          </div>
+
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe7fd;</span>
+            <input
+              class="form__input form__input--modal"
+              id="lastname"
+              type="text"
+              placeholder=" "
+              required
+            />
+            <label class="form__label" for="lastname">Lastname</label>
+          </div>
+
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe0d0;</span>
+            <input
+              class="form__input form__input--modal"
+              id="dni"
+              type="text"
+              placeholder=" "
+              required
+            />
+            <label class="form__label" for="dni">DNI</label>
+          </div>
+
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe0be;</span>
+            <input
+              class="form__input form__input--modal"
+              id="email"
+              type="email"
+              placeholder=" "
+              required
+            />
+            <label class="form__label" for="email">Email</label>
+          </div>
+
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe897;</span>
+            <input
+              class="form__input form__input--modal"
+              id="password"
+              type="password"
+              placeholder=" "
+              autocomplete="on"
+              required
+            />
+            <label class="form__label" for="password">Password</label>
+          </div>
+
+          <div class="field__data field__data--modal">
+            <span class="material-icons">&#xe0b0;</span>
+            <input
+              class="form__input form__input--modal"
+              id="phone"
+              type="text"
+              placeholder=" "
+              required
+            />
+            <label class="form__label" for="phone">Phone</label>
+          </div>
+
+          <input class="form__input-submit" type="submit" />
+        </form>
+      </div>
+    </section>
+
     <script src="../../js/helpers/side.js"></script>
     <script src="../../js/helpers/comprobationToken.js"></script>
     <script src="../../js/helpers/getProfile.js"></script>
     <script
       type="module"
-      src="../../js/controller/admin/loadEmployees.js"
+      src="../../js/admin/loadEmployees.js"
     ></script>
-    <script src="../../js/controller/admin/adminLogout.js"></script>
+    <script src="../../js/admin/adminLogout.js"></script>
+    <script src="../../js/helpers/modal.js"></script>
   </body>
 </html>
