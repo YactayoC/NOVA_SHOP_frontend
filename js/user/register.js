@@ -32,5 +32,6 @@ async function register(e) {
       .then((result) => {
         console.log(result.msg);
       });
+    form.reset();
   }
 }

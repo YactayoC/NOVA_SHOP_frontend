@@ -160,6 +160,10 @@ ul {
   background-color: #8446f7;
 }
 
+.form__input {
+  color-scheme: dark;
+}
+
 .form__input:not(:placeholder-shown) {
   color: #fff;
 }

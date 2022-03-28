@@ -1,50 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 body {
-    font-size: 2rem;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
-    background-image: url(../../img/city3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90rem;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  background-color: #020104;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .container {
-    max-width: 130rem;
-    margin: 0 auto;
-    width: 90%;
+  max-width: 130rem;
+  margin: 0 auto;
+  width: 90%;
 }
 
 h2::after {
-    content: '';
-    display: block;
-    width: 10rem;
-    height: 1rem;
-    background-color: #8446f7;
-    margin: 0 auto;
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 1rem;
+  background-color: #8446f7;
+  margin: 0 auto;
 }
 
 option {
-    background-color: #020104;
-    font-size: 1.5rem;
-    outline: none;
-    box-shadow: none;
-    text-align: center;
+  background-color: #020104;
+  font-size: 1.5rem;
+  outline: none;
+  box-shadow: none;
+  text-align: center;
 }
+
+.main__grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .main__grid {
+    display: grid;
+    grid-template-rows: unset;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 1rem;
+  height: 100%;
+}
+
+.main__content img {
+  width: 20rem;
+}
+
+.main__heading {
+  font-size: 10rem;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(#8446f7, #b31b9e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.main__description {
+  margin: 0;
+}
+
+.form {
+    margin: 0;
+    background-color: unset;
+  padding: 1rem 5rem;
+}
+
+@media (min-width: 768px) {
+  .form {
+    margin: 10rem auto 2rem auto;
+    background-color: unset;
+  }
+}
+
+.form__heading {
+  color: #fff;
+}
+
+.main__register {
+  margin-top: 4rem;
+}
+
+.main__register a {
+  color: #fff;
+}
+
+/*  confirm */
+.main__text {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.main__button-login {
+  background-color: unset;
+  border: 2px solid #8446f7;
+  padding: 1rem 4rem;
+  color: #8446f7;
+  transition: all 0.3s ease;
+}
+
+.main__button-login:hover {
+  background-color: #8446f7;
+  color: #fff;
+}
+

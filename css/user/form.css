@@ -48,7 +48,7 @@
 
 .form__label {
   font-size: 1.7rem;
-  color: #5757577e;
+  color: #cecdcd7e;
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -59,7 +59,7 @@
 
 /* Si no hay placeholder cambiar el color al input */
 .form__input:not(:placeholder-shown) {
-  color: #706c6c;
+  color: #fff;
 }
 
 /* Si el input esta activo y  */
@@ -67,7 +67,7 @@
 .form__input:not(:placeholder-shown) + .form__label {
   transform: translateY(-20px) scale(0.8);
   transform-origin: left top;
-  color: #e8505b;
+  color: #8446f7;
 }
 
 .form__line {
@@ -76,7 +76,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #e8505b;
+  background-color: #8446f7;
   transform: scale(0);
   transform: left bottom;
   transition: transform 0.4s;
@@ -85,15 +85,15 @@
 .form__input:focus ~ .form__line,
 .form__input:not(:placeholder-shown) ~ .form__line {
   transform: scale(1);
-  background-color: #e8505b;
+  background-color: #8446f7;
 }
 
 .form__button {
-  color: #e8505b;
+  color: #fff;
   font-size: 1.6rem;
   font-weight: 700;
   background-color: rgb(255 255 255 / 0.1);
-  border: 2px solid #e8505b;
+  border: 2px solid #8446f7;
   padding: 1rem 3rem;
   width: 50%;
   margin: 0 auto;
@@ -102,7 +102,7 @@
 }
 
 .form__button:hover {
-    background-color: #e8505b;
+    background-color: #8446f7;
     color: #fff;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .main__register a:hover {
-    color: #e8505b;
+    color: #8446f7;
 }
 
 .main__return {
