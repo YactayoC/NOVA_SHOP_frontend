@@ -3,7 +3,7 @@ const buttonAddProduct = document.getElementById("add-product");
 
 const modal = document.querySelector(".modal");
 const modalClose = document.querySelector(".material-icons--close");
-if (window.location.href.includes("Products")) {
+if (window.location.href.includes("products")) {
   buttonAddProduct.addEventListener("click", addProduct);
 } else {
   buttonAddEmployee.addEventListener("click", addEmployee);
