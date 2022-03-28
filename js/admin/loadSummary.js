@@ -21,7 +21,7 @@ async function loadClients() {
     };
 
     await fetch(
-      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/clients",
+      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/clients-summary",
       config
     )
       .then((answer) => answer.json())
