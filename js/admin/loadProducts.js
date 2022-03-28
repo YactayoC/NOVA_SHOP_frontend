@@ -31,7 +31,10 @@ async function loadProducts() {
   if (!token) return;
 
   try {
-    await fetch("http://localhost:4000/api/employees/products", config)
+    await fetch(
+      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/products",
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = "none";
@@ -170,7 +173,7 @@ async function addProduct() {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        "http://localhost:4000/api/employees/products",
+        "https://sleepy-eyrie-36824.herokuapp.com/api/employees/products",
         {
           method: "POST",
           body: JSON.stringify({
@@ -198,7 +201,7 @@ async function getProduct(idProduct) {
 
   try {
     await fetch(
-      `http://localhost:4000/api/employees/product/${idProduct}`,
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
       config
     )
       .then((answer) => answer.json())
@@ -234,7 +237,7 @@ async function updateProduct(idProduct) {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        `http://localhost:4000/api/employees/product/${idProduct}`,
+        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
         {
           method: "PUT",
           body: JSON.stringify({
@@ -262,7 +265,7 @@ async function deleteProduct(idProduct) {
 
   try {
     await fetch(
-      `http://localhost:4000/api/employees/product/${idProduct}`,
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
       {
         method: "DELETE",
       },

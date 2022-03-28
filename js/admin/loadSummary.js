@@ -20,7 +20,10 @@ async function loadClients() {
       },
     };
 
-    await fetch("http://localhost:4000/api/employees/clients", config)
+    await fetch(
+      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/clients",
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = "none";

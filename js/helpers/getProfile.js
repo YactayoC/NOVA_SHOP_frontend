@@ -13,7 +13,10 @@ async function loadData() {
       },
     };
 
-    await fetch(`http://localhost:4000/api/employees/profile/${id}`, config)
+    await fetch(
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         dataPublic(results);

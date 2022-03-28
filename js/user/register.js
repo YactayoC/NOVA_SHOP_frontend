@@ -21,7 +21,7 @@ async function register(e) {
   const password = passwordData.value;
 
   if (validationRegister(name, lastname, dni, phone, email, password)) {
-    await fetch("http://localhost:4000/api/user/register", {
+    await fetch("https://sleepy-eyrie-36824.herokuapp.com/api/user/register", {
       method: "POST",
       body: JSON.stringify({ name, lastname, dni, phone, email, password }),
       headers: {

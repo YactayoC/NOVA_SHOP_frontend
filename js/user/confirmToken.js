@@ -7,7 +7,7 @@ const querystring = window.location.search;
 const id = querystring.substring(2);
 
 async function confirmToken() {
-  await fetch(`http://localhost:4000/api/user/confirm/${id}`)
+  await fetch(`https://sleepy-eyrie-36824.herokuapp.com/api/user/confirm/${id}`)
     .then((answer) => answer.json())
     .then((results) => {
       text.textContent = results.msg;

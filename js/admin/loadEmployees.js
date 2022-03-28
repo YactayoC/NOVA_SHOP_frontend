@@ -39,7 +39,10 @@ async function loadEmployees() {
   if (!token) return;
 
   try {
-    await fetch("http://localhost:4000/api/employees/employees", config)
+    await fetch(
+      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/employees",
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = "none";
@@ -182,7 +185,7 @@ async function addEmployee() {
   try {
     if (validationFormEmployee(name, lastname, dni, email, password, phone)) {
       await fetch(
-        "http://localhost:4000/api/employees/employees",
+        "https://sleepy-eyrie-36824.herokuapp.com/api/employees/employees",
         {
           method: "POST",
           body: JSON.stringify({ name, lastname, dni, email, password, phone }),
@@ -207,7 +210,7 @@ async function getEmployee(idEmployee) {
 
   try {
     await fetch(
-      `http://localhost:4000/api/employees/employee/${idEmployee}`,
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
       config
     )
       .then((answer) => answer.json())
@@ -242,7 +245,7 @@ async function updateEmployee(idEmployee) {
   try {
     if (validationUpdateFormEmployee(name, lastname, password, phone)) {
       await fetch(
-        `http://localhost:4000/api/employees/employee/${idEmployee}`,
+        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
         {
           method: "PUT",
           body: JSON.stringify({ name, lastname, password, phone }),
@@ -264,7 +267,7 @@ async function deleteEmployee(idEmployee) {
 
   try {
     await fetch(
-      `http://localhost:4000/api/employees/employee/${idEmployee}`,
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
       {
         method: "DELETE",
       },

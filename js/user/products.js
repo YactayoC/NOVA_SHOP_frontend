@@ -43,7 +43,10 @@ if (!token) {
 async function loadProducts() {
   spinner();
   try {
-    await fetch("http://localhost:4000/api/user/products", config)
+    await fetch(
+      "https://sleepy-eyrie-36824.herokuapp.com/api/user/products",
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = "none";

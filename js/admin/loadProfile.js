@@ -27,7 +27,10 @@ async function loadProfile() {
   const id = localStorage.getItem("id");
 
   try {
-    await fetch(`http://localhost:4000/api/employees/profile/${id}`, config)
+    await fetch(
+      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
+      config
+    )
       .then((answer) => answer.json())
       .then((results) => {
         completeResults(results);
@@ -67,7 +70,7 @@ function eventUpdate() {
   try {
     if (validationUpdateProfile(name, lastname, password, phone)) {
       fetch(
-        `http://localhost:4000/api/employees/profile/${id}`,
+        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
         {
           method: "PUT",
           body: JSON.stringify({ name, lastname, password, phone }),

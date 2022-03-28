@@ -63,7 +63,7 @@ async function sendDistrict(district) {
   if (!token) return;
   const id = localStorage.getItem("id");
   await fetch(
-    `http://localhost:4000/api/user/cart/${id}`,
+    `https://sleepy-eyrie-36824.herokuapp.com/api/user/cart/${id}`,
     {
       method: "POST",
       body: JSON.stringify({ district }),
