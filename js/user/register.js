@@ -8,6 +8,9 @@ const phoneData = document.getElementById("phone");
 const emailData = document.getElementById("email");
 const passwordData = document.getElementById("password");
 
+const modal = document.querySelector(".modal");
+const infoText = document.querySelector(".info__text .info__product");
+
 form.addEventListener("submit", register);
 
 async function register(e) {
@@ -21,7 +24,7 @@ async function register(e) {
   const password = passwordData.value;
 
   if (validationRegister(name, lastname, dni, phone, email, password)) {
-    await fetch("https://sleepy-eyrie-36824.herokuapp.com/api/user/register", {
+    await fetch("http://localhost:4000/api/user/register", {
       method: "POST",
       body: JSON.stringify({ name, lastname, dni, phone, email, password }),
       headers: {
@@ -30,8 +33,22 @@ async function register(e) {
     })
       .then((answer) => answer.json())
       .then((result) => {
-        console.log(result.msg);
+        infoText.textContent = result.msg;
       });
+
+    modal.classList.add("modal__active");
+    modal.classList.remove("modal__hide");
+    setTimeout(() => {
+      modal.classList.remove("modal__active");
+    }, 3000);
+
     form.reset();
+  } else {
+    infoText.textContent = "Empty fields";
+    modal.classList.add("modal__active");
+    modal.classList.remove("modal__hide");
+    setTimeout(() => {
+      modal.classList.remove("modal__active");
+    }, 3000);
   }
 }

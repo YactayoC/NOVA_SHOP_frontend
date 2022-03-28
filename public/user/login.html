@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="../../css/user/form.css" />
     <link rel="stylesheet" href="../../css/user/loginRegister.css" />
+    <link rel="stylesheet" href="../../css/user/modallog.css" />
   </head>
   <body>
     <main class="main">
@@ -55,14 +56,25 @@
             <input class="form__button" type="submit" value="Login" />
           </div>
           <p class="main__register">
-            ¿No tienes una cuenta? <a href="register.html">Registrate</a>
+            ¿You do not have an account? <a href="register.html">Sign up</a>
           </p>
         </form>
       </div>
     </main>
-    <footer>
-
-    </footer>
+    
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__close">
+          <span class="material-icons">&#xe888;</span>
+        </div>
+        <div class="modal__info">
+          <p class="info__text">
+            <span class="info__product"> </span>
+          </p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="../../js/user/login.js"></script>
+    <script type="module" src="../../js/helpers/modalProduct.js"></script>
   </body>
 </html>

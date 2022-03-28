@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../../css/user/form.css" />
     <link rel="stylesheet" href="../../css/user/loginRegister.css" />
+    <link rel="stylesheet" href="../../css/user/modallog.css" />
   </head>
   <body>
     <main class="main">
@@ -61,7 +62,7 @@
                 type="text"
                 placeholder=" "
               />
-              <label class="form__label" for="lastname">DNI</label>
+              <label class="form__label" for="dni">DNI</label>
               <span class="form__line"></span>
             </div>
 
@@ -69,7 +70,7 @@
               <input
                 class="form__input"
                 id="phone"
-                type="text"
+                type="number"
                 placeholder=" "
               />
               <label class="form__label" for="phone">Phone</label>
@@ -80,7 +81,7 @@
               <input
                 class="form__input"
                 id="email"
-                type="text"
+                type="email"
                 placeholder=" "
               />
               <label class="form__label" for="email">Email</label>
@@ -101,14 +102,24 @@
             <input class="form__button" type="submit" value="Register" />
           </div>
           <p class="main__register">
-            ¿Ya tienes tu cuenta? <a href="login.html">Inicia Sesión</a>
+            ¿Do you already have an account? <a href="login.html">Log in</a>
           </p>
         </form>
       </div>
     </main>
-    <footer>
-
-    </footer>
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__close">
+          <span class="material-icons">&#xe888;</span>
+        </div>
+        <div class="modal__info">
+          <p class="info__text">
+            <span class="info__product"> </span>
+          </p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="../../js/user/register.js"></script>
+    <script type="module" src="../../js/helpers/modalProduct.js"></script>
   </body>
 </html>

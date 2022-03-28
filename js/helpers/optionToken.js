@@ -1,6 +1,5 @@
 function addToken(result) {
   if (!result.token) {
-    console.log(result.msg);
     return;
   }
 
@@ -13,7 +12,6 @@ function addToken(result) {
 
 function addTokenAdmin(result) {
   if (!result.token) {
-    console.log(result.msg);
     return;
   }
 
