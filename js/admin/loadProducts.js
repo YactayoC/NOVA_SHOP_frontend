@@ -1,27 +1,27 @@
-import { validationFormProduct } from "../helpers/validation.js";
+import { validationFormProduct } from '../helpers/validation.js';
 
-import eventSearch from "../helpers/searchInput.js";
+import eventSearch from '../helpers/searchInput.js';
 
-const divData = document.querySelector(".table__data");
-const divSpinner = document.createElement("div");
+const divData = document.querySelector('.table__data');
+const divSpinner = document.createElement('div');
 
-const formSearch = document.getElementById("form-search");
+const formSearch = document.getElementById('form-search');
 
-const quantityProducts = document.getElementById("all");
+const quantityProducts = document.getElementById('all');
 
-const form = document.getElementById("form-modal--product");
-const headingModal = document.querySelector(".modal__heading--text");
-const buttonOptionProduct = document.querySelector(".form__input-submit");
+const form = document.getElementById('form-modal--product');
+const headingModal = document.querySelector('.modal__heading--text');
+const buttonOptionProduct = document.querySelector('.form__input-submit');
 
-const buttonAddProduct = document.getElementById("add-product");
-buttonAddProduct.addEventListener("click", formProductAdd);
+const buttonAddProduct = document.getElementById('add-product');
+buttonAddProduct.addEventListener('click', formProductAdd);
 
-document.addEventListener("DOMContentLoaded", loadProducts);
+document.addEventListener('DOMContentLoaded', loadProducts);
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem('token');
 const config = {
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   },
 };
@@ -31,15 +31,12 @@ async function loadProducts() {
   if (!token) return;
 
   try {
-    await fetch(
-      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/products",
-      config
-    )
+    await fetch('https://novashopbackend-production.up.railway.app/api/employees/products', config)
       .then((answer) => answer.json())
       .then((results) => {
-        divSpinner.style.display = "none";
+        divSpinner.style.display = 'none';
         showResults(results);
-        formSearch.addEventListener("submit", (e) => {
+        formSearch.addEventListener('submit', (e) => {
           e.preventDefault();
           eventSearch();
         });
@@ -60,43 +57,43 @@ function showResults(results) {
 function createHTML(result) {
   const { _id, name, price, quantity, category } = result;
 
-  const ulData = document.createElement("ul");
-  ulData.classList.add("data__items", "data__items-products");
+  const ulData = document.createElement('ul');
+  ulData.classList.add('data__items', 'data__items-products');
 
-  const liImg = document.createElement("li");
-  liImg.classList.add("data__image");
+  const liImg = document.createElement('li');
+  liImg.classList.add('data__image');
 
-  const img = document.createElement("img");
-  img.src = "../../img/products/aorus-k1.png";
+  const img = document.createElement('img');
+  img.src = '../../img/products/aorus-k1.png';
 
-  const liName = document.createElement("li");
-  liName.classList.add("data__name");
+  const liName = document.createElement('li');
+  liName.classList.add('data__name');
   liName.textContent = name;
 
-  const liStock = document.createElement("li");
-  liStock.classList.add("data__stock");
+  const liStock = document.createElement('li');
+  liStock.classList.add('data__stock');
   liStock.textContent = quantity;
 
-  const liPrice = document.createElement("li");
-  liPrice.classList.add("data__price");
+  const liPrice = document.createElement('li');
+  liPrice.classList.add('data__price');
   liPrice.textContent = `$ ${price}`;
 
-  const liCategory = document.createElement("li");
-  liCategory.classList.add("data__category");
+  const liCategory = document.createElement('li');
+  liCategory.classList.add('data__category');
   liCategory.textContent = category;
 
-  const liEdit = document.createElement("li");
+  const liEdit = document.createElement('li');
   liEdit.dataset.id = _id;
-  liEdit.classList.add("data__edit");
+  liEdit.classList.add('data__edit');
 
-  const spanEdit = document.createElement("span");
+  const spanEdit = document.createElement('span');
   spanEdit.innerHTML = '<span class="material-icons">&#xe3c9;</span>';
 
-  const liRemove = document.createElement("li");
+  const liRemove = document.createElement('li');
   liRemove.dataset.id = _id;
-  liRemove.classList.add("data__remove");
+  liRemove.classList.add('data__remove');
 
-  const spanRemove = document.createElement("span");
+  const spanRemove = document.createElement('span');
   spanRemove.innerHTML = '<span class="material-icons">&#xe872;</span>';
 
   liImg.appendChild(img);
@@ -114,29 +111,29 @@ function createHTML(result) {
 }
 
 // OPTIONS PRODUCTS
-const nameV = document.getElementById("name");
-const priceV = document.getElementById("price");
-const stockV = document.getElementById("stock");
-const descriptionV = document.getElementById("description");
-const categoryV = document.getElementById("category");
+const nameV = document.getElementById('name');
+const priceV = document.getElementById('price');
+const stockV = document.getElementById('stock');
+const descriptionV = document.getElementById('description');
+const categoryV = document.getElementById('category');
 
 function generateButtons() {
-  const modal = document.querySelector(".modal");
+  const modal = document.querySelector('.modal');
 
-  const buttonsEdit = document.querySelectorAll(".data__edit");
+  const buttonsEdit = document.querySelectorAll('.data__edit');
   buttonsEdit.forEach((buttonEdit) => {
     const idProduct = buttonEdit.dataset.id;
-    buttonEdit.addEventListener("click", (e) => {
+    buttonEdit.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.remove("modal--hide");
+      modal.classList.remove('modal--hide');
       formProductEdit(idProduct);
     });
   });
 
-  const buttonsRemove = document.querySelectorAll(".data__remove");
+  const buttonsRemove = document.querySelectorAll('.data__remove');
   buttonsRemove.forEach((buttonRemove) => {
     const idProduct = buttonRemove.dataset.id;
-    buttonRemove.addEventListener("click", (e) => {
+    buttonRemove.addEventListener('click', (e) => {
       e.preventDefault();
       deleteProduct(idProduct);
     });
@@ -144,20 +141,20 @@ function generateButtons() {
 }
 
 function formProductAdd() {
-  buttonOptionProduct.value = "Add";
-  buttonOptionProduct.dataset.option = "add";
-  headingModal.textContent = "Add Product";
+  buttonOptionProduct.value = 'Add';
+  buttonOptionProduct.dataset.option = 'add';
+  headingModal.textContent = 'Add Product';
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     addProduct();
   });
   form.reset();
 }
 function formProductEdit(id) {
-  buttonOptionProduct.value = "Update";
-  buttonOptionProduct.dataset.option = "update";
-  headingModal.textContent = "Update Product";
+  buttonOptionProduct.value = 'Update';
+  buttonOptionProduct.dataset.option = 'update';
+  headingModal.textContent = 'Update Product';
   getProduct(id);
   form.reset();
 }
@@ -173,9 +170,9 @@ async function addProduct() {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        "https://sleepy-eyrie-36824.herokuapp.com/api/employees/products",
+        'https://novashopbackend-production.up.railway.app/api/employees/products',
         {
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify({
             name,
             price,
@@ -184,13 +181,13 @@ async function addProduct() {
             category,
           }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
         config
       );
     }
-    window.location.href = "adminProducts.html";
+    window.location.href = 'adminProducts.html';
   } catch (error) {
     console.log(error);
   }
@@ -200,20 +197,17 @@ async function getProduct(idProduct) {
   if (!token) return;
 
   try {
-    await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
-      config
-    )
+    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`, config)
       .then((answer) => answer.json())
       .then((results) => {
-        divSpinner.style.display = "none";
+        divSpinner.style.display = 'none';
         nameV.value = results.name;
         priceV.value = results.price;
         stockV.value = results.quantity;
         descriptionV.value = results.description;
         categoryV.value = results.category;
         const id = results._id;
-        form.addEventListener("submit", (e) => {
+        form.addEventListener('submit', (e) => {
           e.preventDefault();
           updateProduct(id);
         });
@@ -237,9 +231,9 @@ async function updateProduct(idProduct) {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
+        `https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`,
         {
-          method: "PUT",
+          method: 'PUT',
           body: JSON.stringify({
             name,
             price,
@@ -248,13 +242,13 @@ async function updateProduct(idProduct) {
             category,
           }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
         config
       );
     }
-    window.location.href = "adminProducts.html";
+    window.location.href = 'adminProducts.html';
   } catch (error) {
     console.log(error);
   }
@@ -265,14 +259,14 @@ async function deleteProduct(idProduct) {
 
   try {
     await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/product/${idProduct}`,
+      `https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`,
       {
-        method: "DELETE",
+        method: 'DELETE',
       },
       config
     ).then((results) => console.log(results));
 
-    window.location.href = "adminProducts.html";
+    window.location.href = 'adminProducts.html';
   } catch (error) {
     console.log(error);
   }
@@ -289,6 +283,6 @@ function spinner() {
     <div class="sk-chase-dot"></div>
   </div>`;
 
-  divSpinner.style.margin = "2rem auto";
+  divSpinner.style.margin = '2rem auto';
   divData.appendChild(divSpinner);
 }

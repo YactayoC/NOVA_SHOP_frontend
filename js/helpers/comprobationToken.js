@@ -1,10 +1,10 @@
-const token = localStorage.getItem("token");
+const token = localStorage.getItem('token');
 
 comprobationToken(token);
 
 function comprobationToken(token) {
   if (!token) {
-    window.location.href = "adminLogin.html";
+    window.location.href = 'adminLogin.html';
     return;
   }
 }

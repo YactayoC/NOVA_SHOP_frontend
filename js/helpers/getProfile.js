@@ -1,22 +1,19 @@
-document.addEventListener("DOMContentLoaded", loadData);
+document.addEventListener('DOMContentLoaded', loadData);
 
 async function loadData() {
   try {
-    const id = localStorage.getItem("id");
-    const token = localStorage.getItem("token");
+    const id = localStorage.getItem('id');
+    const token = localStorage.getItem('token');
     if (!token) return;
 
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
     };
 
-    await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
-      config
-    )
+    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         dataPublic(results);
@@ -28,6 +25,6 @@ async function loadData() {
 
 function dataPublic(results) {
   const { name, lastname } = results;
-  const namePublic = document.querySelector(".nav__profile-name");
+  const namePublic = document.querySelector('.nav__profile-name');
   namePublic.textContent = `${name} ${lastname}`;
 }

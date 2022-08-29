@@ -1,35 +1,32 @@
-import eventSearch from "../helpers/searchInput.js";
-import {
-  validationFormEmployee,
-  validationUpdateFormEmployee,
-} from "../helpers/validation.js";
+import eventSearch from '../helpers/searchInput.js';
+import { validationFormEmployee, validationUpdateFormEmployee } from '../helpers/validation.js';
 
 // public
-const divData = document.querySelector(".table__data");
-const divSpinner = document.createElement("div");
+const divData = document.querySelector('.table__data');
+const divSpinner = document.createElement('div');
 
 // search
-const formSearch = document.getElementById("form-search");
+const formSearch = document.getElementById('form-search');
 
 // quantity employee
-const quantityEmployees = document.getElementById("all");
+const quantityEmployees = document.getElementById('all');
 
 // modal
-const form = document.getElementById("form-modal");
-const headingModal = document.querySelector(".modal__heading--text");
-const buttonOptionEmployee = document.querySelector(".form__input-submit");
+const form = document.getElementById('form-modal');
+const headingModal = document.querySelector('.modal__heading--text');
+const buttonOptionEmployee = document.querySelector('.form__input-submit');
 
 // Event
-const buttonAddEmployee = document.getElementById("add-employee");
-buttonAddEmployee.addEventListener("click", formEmployeeAdd);
+const buttonAddEmployee = document.getElementById('add-employee');
+buttonAddEmployee.addEventListener('click', formEmployeeAdd);
 
 // Onload
-document.addEventListener("DOMContentLoaded", loadEmployees);
+document.addEventListener('DOMContentLoaded', loadEmployees);
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem('token');
 const config = {
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   },
 };
@@ -39,15 +36,12 @@ async function loadEmployees() {
   if (!token) return;
 
   try {
-    await fetch(
-      "https://sleepy-eyrie-36824.herokuapp.com/api/employees/employees",
-      config
-    )
+    await fetch('https://novashopbackend-production.up.railway.app/api/employees/employees', config)
       .then((answer) => answer.json())
       .then((results) => {
-        divSpinner.style.display = "none";
+        divSpinner.style.display = 'none';
         showResults(results);
-        formSearch.addEventListener("submit", (e) => {
+        formSearch.addEventListener('submit', (e) => {
           e.preventDefault();
           eventSearch();
         });
@@ -69,43 +63,43 @@ function showResults(results) {
 function createHTML(result) {
   const { _id, name, dni, email, phone } = result;
 
-  const ulData = document.createElement("ul");
-  ulData.classList.add("data__items", "data__items-employees");
+  const ulData = document.createElement('ul');
+  ulData.classList.add('data__items', 'data__items-employees');
 
-  const liImg = document.createElement("li");
-  liImg.classList.add("data__profile");
+  const liImg = document.createElement('li');
+  liImg.classList.add('data__profile');
 
-  const img = document.createElement("img");
-  img.src = "../../img/profile.jpg";
+  const img = document.createElement('img');
+  img.src = '../../img/profile.jpg';
 
-  const liName = document.createElement("li");
-  liName.classList.add("data__name");
+  const liName = document.createElement('li');
+  liName.classList.add('data__name');
   liName.textContent = name;
 
-  const liDNI = document.createElement("li");
-  liDNI.classList.add("data__dni");
+  const liDNI = document.createElement('li');
+  liDNI.classList.add('data__dni');
   liDNI.textContent = dni;
 
-  const liEmail = document.createElement("li");
-  liEmail.classList.add("data__email");
+  const liEmail = document.createElement('li');
+  liEmail.classList.add('data__email');
   liEmail.textContent = email;
 
-  const liPhone = document.createElement("li");
-  liPhone.classList.add("data__phone");
+  const liPhone = document.createElement('li');
+  liPhone.classList.add('data__phone');
   liPhone.textContent = phone;
 
-  const liEdit = document.createElement("li");
+  const liEdit = document.createElement('li');
   liEdit.dataset.id = _id;
-  liEdit.classList.add("data__edit");
+  liEdit.classList.add('data__edit');
 
-  const spanEdit = document.createElement("span");
+  const spanEdit = document.createElement('span');
   spanEdit.innerHTML = '<span class="material-icons">&#xe3c9;</span>';
 
-  const liRemove = document.createElement("li");
+  const liRemove = document.createElement('li');
   liRemove.dataset.id = _id;
-  liRemove.classList.add("data__remove");
+  liRemove.classList.add('data__remove');
 
-  const spanRemove = document.createElement("span");
+  const spanRemove = document.createElement('span');
   spanRemove.innerHTML = '<span class="material-icons">&#xe872;</span>';
 
   liImg.appendChild(img);
@@ -123,30 +117,30 @@ function createHTML(result) {
 }
 
 // OPTIONS EMPLOYEE
-const nameV = document.getElementById("name");
-const lastnameV = document.getElementById("lastname");
-const dniV = document.getElementById("dni");
-const emailV = document.getElementById("email");
-const passwordV = document.getElementById("password");
-const phoneV = document.getElementById("phone");
+const nameV = document.getElementById('name');
+const lastnameV = document.getElementById('lastname');
+const dniV = document.getElementById('dni');
+const emailV = document.getElementById('email');
+const passwordV = document.getElementById('password');
+const phoneV = document.getElementById('phone');
 
 function generateButtons() {
-  const modal = document.querySelector(".modal");
+  const modal = document.querySelector('.modal');
 
-  const buttonsEdit = document.querySelectorAll(".data__edit");
+  const buttonsEdit = document.querySelectorAll('.data__edit');
   buttonsEdit.forEach((buttonEdit) => {
     const idEmployee = buttonEdit.dataset.id;
-    buttonEdit.addEventListener("click", (e) => {
+    buttonEdit.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.remove("modal--hide");
+      modal.classList.remove('modal--hide');
       formEmployeeEdit(idEmployee);
     });
   });
 
-  const buttonsRemove = document.querySelectorAll(".data__remove");
+  const buttonsRemove = document.querySelectorAll('.data__remove');
   buttonsRemove.forEach((buttonRemove) => {
     const idEmployee = buttonRemove.dataset.id;
-    buttonRemove.addEventListener("click", (e) => {
+    buttonRemove.addEventListener('click', (e) => {
       e.preventDefault();
       deleteEmployee(idEmployee);
     });
@@ -154,11 +148,11 @@ function generateButtons() {
 }
 
 function formEmployeeAdd() {
-  buttonOptionEmployee.value = "Add";
-  buttonOptionEmployee.dataset.option = "add";
-  headingModal.textContent = "Add Employee";
+  buttonOptionEmployee.value = 'Add';
+  buttonOptionEmployee.dataset.option = 'add';
+  headingModal.textContent = 'Add Employee';
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     addEmployee();
   });
@@ -166,9 +160,9 @@ function formEmployeeAdd() {
 }
 
 function formEmployeeEdit(id) {
-  buttonOptionEmployee.value = "Update";
-  buttonOptionEmployee.dataset.option = "update";
-  headingModal.textContent = "Update Employee";
+  buttonOptionEmployee.value = 'Update';
+  buttonOptionEmployee.dataset.option = 'update';
+  headingModal.textContent = 'Update Employee';
   getEmployee(id);
   form.reset();
 }
@@ -185,18 +179,18 @@ async function addEmployee() {
   try {
     if (validationFormEmployee(name, lastname, dni, email, password, phone)) {
       await fetch(
-        "https://sleepy-eyrie-36824.herokuapp.com/api/employees/employees",
+        'https://novashopbackend-production.up.railway.app/api/employees/employees',
         {
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify({ name, lastname, dni, email, password, phone }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
         config
       );
     }
-    window.location.href = "adminEmployees.html";
+    window.location.href = 'adminEmployees.html';
   } catch (error) {
     console.log(error);
   }
@@ -209,20 +203,17 @@ async function getEmployee(idEmployee) {
   emailV.disabled = true;
 
   try {
-    await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
-      config
-    )
+    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`, config)
       .then((answer) => answer.json())
       .then((results) => {
-        divSpinner.style.display = "none";
+        divSpinner.style.display = 'none';
         nameV.value = results.name;
         lastnameV.value = results.lastname;
         dniV.value = results.dni;
         emailV.value = results.email;
         phoneV.value = results.phone;
         const id = results._id;
-        form.addEventListener("submit", (e) => {
+        form.addEventListener('submit', (e) => {
           e.preventDefault();
           updateEmployee(id);
         });
@@ -245,18 +236,18 @@ async function updateEmployee(idEmployee) {
   try {
     if (validationUpdateFormEmployee(name, lastname, password, phone)) {
       await fetch(
-        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
+        `https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`,
         {
-          method: "PUT",
+          method: 'PUT',
           body: JSON.stringify({ name, lastname, password, phone }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
         config
       );
     }
-    window.location.href = "adminEmployees.html";
+    window.location.href = 'adminEmployees.html';
   } catch (error) {
     console.log(error);
   }
@@ -267,14 +258,14 @@ async function deleteEmployee(idEmployee) {
 
   try {
     await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/employee/${idEmployee}`,
+      `https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`,
       {
-        method: "DELETE",
+        method: 'DELETE',
       },
       config
     );
 
-    window.location.href = "adminEmployees.html";
+    window.location.href = 'adminEmployees.html';
   } catch (error) {
     console.log(error);
   }
@@ -291,6 +282,6 @@ function spinner() {
       <div class="sk-chase-dot"></div>
     </div>`;
 
-  divSpinner.style.margin = "2rem auto";
+  divSpinner.style.margin = '2rem auto';
   divData.appendChild(divSpinner);
 }

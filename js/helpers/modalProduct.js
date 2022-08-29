@@ -1,5 +1,5 @@
-const modalClose = document.querySelector(".modal__close");
+const modalClose = document.querySelector('.modal__close');
 
-modalClose.addEventListener("click", () => {
-  modalClose.parentElement.parentElement.classList.add("modal__hide");
+modalClose.addEventListener('click', () => {
+  modalClose.parentElement.parentElement.classList.add('modal__hide');
 });

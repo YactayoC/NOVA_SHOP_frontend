@@ -3,11 +3,11 @@ function addToken(result) {
     return;
   }
 
-  localStorage.setItem("name", result.name);
-  localStorage.setItem("lastname", result.lastname);
-  localStorage.setItem("id", result._id);
-  localStorage.setItem("token", result.token);
-  window.location.href = "./home.html";
+  localStorage.setItem('name', result.name);
+  localStorage.setItem('lastname', result.lastname);
+  localStorage.setItem('id', result._id);
+  localStorage.setItem('token', result.token);
+  window.location.href = './home.html';
 }
 
 function addTokenAdmin(result) {
@@ -15,9 +15,9 @@ function addTokenAdmin(result) {
     return;
   }
 
-  localStorage.setItem("token", result.token);
-  localStorage.setItem("id", result._id);
-  window.location.href = "adminSummary.html";
+  localStorage.setItem('token', result.token);
+  localStorage.setItem('id', result._id);
+  window.location.href = 'adminSummary.html';
 }
 
 export { addToken, addTokenAdmin };

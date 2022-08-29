@@ -1,36 +1,33 @@
-import { validationUpdateProfile } from "../helpers/validation.js";
+import { validationUpdateProfile } from '../helpers/validation.js';
 
-const form = document.getElementById("form");
-const nameV = document.getElementById("name");
-const lastnameV = document.getElementById("lastname");
-const dniV = document.getElementById("dni");
-const emailV = document.getElementById("email");
-const passwordV = document.getElementById("password");
-const phoneV = document.getElementById("phone");
+const form = document.getElementById('form');
+const nameV = document.getElementById('name');
+const lastnameV = document.getElementById('lastname');
+const dniV = document.getElementById('dni');
+const emailV = document.getElementById('email');
+const passwordV = document.getElementById('password');
+const phoneV = document.getElementById('phone');
 
-document.addEventListener("DOMContentLoaded", loadProfile);
-form.addEventListener("submit", (e) => {
+document.addEventListener('DOMContentLoaded', loadProfile);
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   eventUpdate();
 });
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem('token');
 const config = {
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   },
 };
 
 async function loadProfile() {
   if (!token) return;
-  const id = localStorage.getItem("id");
+  const id = localStorage.getItem('id');
 
   try {
-    await fetch(
-      `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
-      config
-    )
+    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         completeResults(results);
@@ -49,9 +46,9 @@ function completeResults(results) {
   emailV.value = email;
   phoneV.value = phone;
 
-  const name_profile = document.getElementById("name-profile");
-  const email_profile = document.getElementById("email-profile");
-  const namePublic = document.querySelector(".nav__profile-name");
+  const name_profile = document.getElementById('name-profile');
+  const email_profile = document.getElementById('email-profile');
+  const namePublic = document.querySelector('.nav__profile-name');
 
   name_profile.textContent = name;
   email_profile.textContent = email;
@@ -60,7 +57,7 @@ function completeResults(results) {
 
 function eventUpdate() {
   if (!token) return;
-  const id = localStorage.getItem("id");
+  const id = localStorage.getItem('id');
 
   const name = nameV.value;
   const lastname = lastnameV.value;
@@ -70,12 +67,12 @@ function eventUpdate() {
   try {
     if (validationUpdateProfile(name, lastname, password, phone)) {
       fetch(
-        `https://sleepy-eyrie-36824.herokuapp.com/api/employees/profile/${id}`,
+        `https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`,
         {
-          method: "PUT",
+          method: 'PUT',
           body: JSON.stringify({ name, lastname, password, phone }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
         config
@@ -88,18 +85,18 @@ function eventUpdate() {
 }
 
 // Complements
-const inputs = document.querySelectorAll(".form__input");
+const inputs = document.querySelectorAll('.form__input');
 inputs.forEach((input) => {
-  input.addEventListener("focus", inputFocus);
-  input.addEventListener("blur", noInputFocus);
+  input.addEventListener('focus', inputFocus);
+  input.addEventListener('blur', noInputFocus);
 });
 
 function inputFocus(e) {
   const div = e.target.parentNode;
-  div.classList.add("field__data-focus");
+  div.classList.add('field__data-focus');
 }
 
 function noInputFocus(e) {
   const div = e.target.parentNode;
-  div.classList.remove("field__data-focus");
+  div.classList.remove('field__data-focus');
 }
