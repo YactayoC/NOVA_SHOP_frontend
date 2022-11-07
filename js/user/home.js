@@ -39,7 +39,6 @@ if (!token) {
 async function loadProducts() {
   spinner();
   try {
-    // ${url_backend}/api/user/home
     await fetch(`${url_backend}/api/user/home`, config)
       .then((answer) => answer.json())
       .then((results) => {
