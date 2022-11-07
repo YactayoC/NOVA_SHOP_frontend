@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nova - Cart</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="../../css/normalize.css" />
     <link rel="stylesheet" href="../../css/user/base.css" />
     <link rel="stylesheet" href="../../css/user/bar.css" />
@@ -25,10 +22,7 @@
           </a>
           <a class="nav__link" href="home.html">Home</a>
           <a class="nav__link" href="products.html">Products</a>
-          <a
-            class="nav__link nav__link--flex nav__link--active"
-            href="cart.html"
-          >
+          <a class="nav__link nav__link--flex nav__link--active" href="cart.html">
             <span class="material-icons">&#xe8cc;</span> Cart</a
           >
         </nav>
@@ -71,20 +65,16 @@
               <span class="material-icons">&#xe872;</span>
             </li>
           </ul> -->
-          
         </div>
 
         <div class="cart__form">
           <h2 class="cart__heading--m">Add Your Card</h2>
-          <h3 class="form__heading form__heading-cart">
-            Total to Pay: $ 0
-          </h3>
+          <h3 class="form__heading form__heading-cart">Total to Pay: $ 0</h3>
           <div class="form__img">
             <img src="../../img/home/card.png" alt="img" />
           </div>
           <form class="form" id="form" method="POST">
             <div class="form__container">
-
               <div class="form__group">
                 <input
                   class="form__input"
@@ -99,12 +89,7 @@
             </div>
             <div class="form__container form__date">
               <div class="form__group">
-                <input
-                  class="form__input"
-                  id="date"
-                  type="month"
-                  placeholder=" "
-                />
+                <input class="form__input" id="date" type="month" placeholder=" " />
                 <label class="form__label" for="date">Date Expiration</label>
                 <span class="form__line"></span>
               </div>
@@ -124,21 +109,20 @@
             </div>
 
             <div class="form__container form__selects">
-                <select id="department" class="form__select">
-                  <option value="Lima" selected disabled>Lima</option>
-                </select>
+              <select id="department" class="form__select">
+                <option value="Lima" selected disabled>Lima</option>
+              </select>
 
+              <select id="province" class="form__select">
+                <option value="Lima" selected disabled>Lima</option>
+              </select>
 
-                <select id="province" class="form__select">
-                  <option value="Lima" selected disabled>Lima</option>
-                </select>
-
-                <select id="district" class="form__select">
-                  <option value="" selected disabled>Select District</option>
-                  <option value="Chilca">Chilca</option>
-                  <option value="Miraflores">Miraflores</option>
-                  <option value="Surco">Surco</option>
-                </select>
+              <select id="district" class="form__select">
+                <option value="" selected disabled>Select District</option>
+                <option value="Chilca">Chilca</option>
+                <option value="Miraflores">Miraflores</option>
+                <option value="Surco">Surco</option>
+              </select>
             </div>
 
             <input class="form__button" type="submit" value="Buy" />
@@ -147,7 +131,7 @@
       </div>
     </main>
 
-    <script src="../../js/user/cart.js"></script>
+    <script src="../../js/user/cart.js" type="module"></script>
     <script src="../../js/user/logout.js"></script>
   </body>
 </html>

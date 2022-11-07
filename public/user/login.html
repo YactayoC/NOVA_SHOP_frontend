@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/normalize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/normalize.css" />
     <link rel="stylesheet" href="../../css/user/form.css" />
     <link rel="stylesheet" href="../../css/user/loginRegister.css" />
     <link rel="stylesheet" href="../../css/user/modallog.css" />
@@ -14,54 +14,36 @@
   <body>
     <main class="main">
       <div class="main__grid">
-
         <div class="main__text">
-          <a class="main__return" href="home.html">
-            <span class="material-icons">&#xe5e0;</span> Home
-          </a>
+          <a class="main__return" href="home.html"> <span class="material-icons">&#xe5e0;</span> Home </a>
 
           <div class="main__content">
-            <img src="../../img/login.png" alt="img">
+            <img src="../../img/login.png" alt="img" />
             <h3 class="main__heading">Nova</h3>
           </div>
         </div>
-
-
 
         <form class="form" id="form" method="POST">
           <div class="form__container">
             <h1 class="form__heading">Sign In</h1>
             <div class="form__group">
-              <input
-                class="form__input"
-                id="email"
-                type="email"
-                placeholder=" "
-              />
+              <input class="form__input" id="email" type="email" placeholder=" " />
               <label class="form__label" for="email">Email</label>
               <span class="form__line"></span>
             </div>
 
             <div class="form__group">
-              <input
-                class="form__input"
-                id="password"
-                type="password"
-                placeholder=" "
-                autocomplete="on"
-              />
+              <input class="form__input" id="password" type="password" placeholder=" " autocomplete="on" />
               <label class="form__label" for="password">Password</label>
               <span class="form__line"></span>
             </div>
             <input class="form__button" type="submit" value="Login" />
           </div>
-          <p class="main__register">
-            ¿You do not have an account? <a href="register.html">Sign up</a>
-          </p>
+          <p class="main__register">¿You do not have an account? <a href="register.html">Sign up</a></p>
         </form>
       </div>
     </main>
-    
+
     <div class="modal">
       <div class="modal__container">
         <div class="modal__close">
@@ -74,7 +56,7 @@
         </div>
       </div>
     </div>
-    <script type="module" src="../../js/user/login.js"></script>
+    <script type="module" src="../../js/user/login.js" type="module"></script>
     <script type="module" src="../../js/helpers/modalProduct.js"></script>
   </body>
 </html>
