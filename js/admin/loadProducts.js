@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import { validationFormProduct } from '../helpers/validation.js';
 
 import eventSearch from '../helpers/searchInput.js';
@@ -31,7 +32,7 @@ async function loadProducts() {
   if (!token) return;
 
   try {
-    await fetch('https://novashopbackend-production.up.railway.app/api/employees/products', config)
+    await fetch(`${url_backend}/api/employees/products`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';
@@ -170,7 +171,7 @@ async function addProduct() {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        'https://novashopbackend-production.up.railway.app/api/employees/products',
+        '${url_backend}/api/employees/products',
         {
           method: 'POST',
           body: JSON.stringify({
@@ -197,7 +198,7 @@ async function getProduct(idProduct) {
   if (!token) return;
 
   try {
-    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`, config)
+    await fetch(`${url_backend}/api/employees/product/${idProduct}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';
@@ -231,7 +232,7 @@ async function updateProduct(idProduct) {
   try {
     if (validationFormProduct(name, price, stock, description, category)) {
       await fetch(
-        `https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`,
+        `${url_backend}/api/employees/product/${idProduct}`,
         {
           method: 'PUT',
           body: JSON.stringify({
@@ -259,7 +260,7 @@ async function deleteProduct(idProduct) {
 
   try {
     await fetch(
-      `https://novashopbackend-production.up.railway.app/api/employees/product/${idProduct}`,
+      `${url_backend}/api/employees/product/${idProduct}`,
       {
         method: 'DELETE',
       },

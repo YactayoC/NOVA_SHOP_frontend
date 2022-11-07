@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import { validationRegister } from '../helpers/validation.js';
 
 const form = document.getElementById('form');
@@ -24,7 +25,7 @@ async function register(e) {
   const password = passwordData.value;
 
   if (validationRegister(name, lastname, dni, phone, email, password)) {
-    await fetch('https://novashopbackend-production.up.railway.app/api/user/register', {
+    await fetch(`${url_backend}/api/user/register`, {
       method: 'POST',
       body: JSON.stringify({ name, lastname, dni, phone, email, password }),
       headers: {

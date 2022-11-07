@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import eventSearch from '../helpers/searchInput.js';
 
 const divData = document.querySelector('.table__data');
@@ -23,7 +24,7 @@ async function loadClients() {
       },
     };
 
-    await fetch('https://novashopbackend-production.up.railway.app/api/employees/clients', config)
+    await fetch(`${url_backend}/api/employees/clients`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';

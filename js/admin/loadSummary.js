@@ -4,6 +4,7 @@ const quantityClient = document.querySelector('.quantity__client');
 
 const divSpinner = document.createElement('div');
 
+import { url_backend } from "../url.js";
 document.addEventListener('DOMContentLoaded', loadClients);
 
 async function loadClients() {
@@ -20,7 +21,7 @@ async function loadClients() {
       },
     };
 
-    await fetch('https://novashopbackend-production.up.railway.app/api/employees/clients-summary', config)
+    await fetch(`${url_backend}/api/employees/clients-summary`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';

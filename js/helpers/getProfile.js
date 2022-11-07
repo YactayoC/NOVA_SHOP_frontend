@@ -1,3 +1,5 @@
+import { url_backend } from "../url.js";
+
 document.addEventListener('DOMContentLoaded', loadData);
 
 async function loadData() {
@@ -13,7 +15,7 @@ async function loadData() {
       },
     };
 
-    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`, config)
+    await fetch(`${url_backend}/api/employees/profile/${id}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         dataPublic(results);

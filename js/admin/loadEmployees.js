@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import eventSearch from '../helpers/searchInput.js';
 import { validationFormEmployee, validationUpdateFormEmployee } from '../helpers/validation.js';
 
@@ -36,7 +37,7 @@ async function loadEmployees() {
   if (!token) return;
 
   try {
-    await fetch('https://novashopbackend-production.up.railway.app/api/employees/employees', config)
+    await fetch(`${url_backend}/api/employees/employees`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';
@@ -179,7 +180,7 @@ async function addEmployee() {
   try {
     if (validationFormEmployee(name, lastname, dni, email, password, phone)) {
       await fetch(
-        'https://novashopbackend-production.up.railway.app/api/employees/employees',
+        `${url_backend}/api/employees/employees`,
         {
           method: 'POST',
           body: JSON.stringify({ name, lastname, dni, email, password, phone }),
@@ -203,7 +204,7 @@ async function getEmployee(idEmployee) {
   emailV.disabled = true;
 
   try {
-    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`, config)
+    await fetch(`${url_backend}/api/employees/employee/${idEmployee}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';
@@ -236,7 +237,7 @@ async function updateEmployee(idEmployee) {
   try {
     if (validationUpdateFormEmployee(name, lastname, password, phone)) {
       await fetch(
-        `https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`,
+        `${url_backend}/api/employees/employee/${idEmployee}`,
         {
           method: 'PUT',
           body: JSON.stringify({ name, lastname, password, phone }),
@@ -258,7 +259,7 @@ async function deleteEmployee(idEmployee) {
 
   try {
     await fetch(
-      `https://novashopbackend-production.up.railway.app/api/employees/employee/${idEmployee}`,
+      `${url_backend}/api/employees/employee/${idEmployee}`,
       {
         method: 'DELETE',
       },

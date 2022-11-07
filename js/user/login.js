@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import { validationLogin } from '../helpers/validation.js';
 import { addToken } from '../helpers/optionToken.js';
 
@@ -17,7 +18,7 @@ async function login(e) {
   const password = passwordData.value;
 
   if (validationLogin(email, password)) {
-    await fetch('https://novashopbackend-production.up.railway.app/api/user/login', {
+    await fetch(`${url_backend}/api/user/login`, {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {

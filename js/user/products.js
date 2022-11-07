@@ -1,3 +1,5 @@
+import { url_backend } from "../url.js";
+
 const productsCard = document.querySelector('.products__card');
 const divSpinner = document.createElement('div');
 
@@ -43,7 +45,7 @@ if (!token) {
 async function loadProducts() {
   spinner();
   try {
-    await fetch('https://novashopbackend-production.up.railway.app/api/user/products', config)
+    await fetch(`${url_backend}/api/user/products`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';

@@ -1,3 +1,5 @@
+import { url_backend } from "../url.js";
+
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 const divSpinner = document.createElement('div');
 
@@ -37,7 +39,8 @@ if (!token) {
 async function loadProducts() {
   spinner();
   try {
-    await fetch('https://novashopbackend-production.up.railway.app/api/user/home', config)
+    // ${url_backend}/api/user/home
+    await fetch(`${url_backend}/api/user/home`, config)
       .then((answer) => answer.json())
       .then((results) => {
         divSpinner.style.display = 'none';
@@ -50,9 +53,10 @@ async function loadProducts() {
 }
 
 function showResults(results) {
-  results.forEach((result) => {
-    createHTML(result);
-  });
+  results &&
+    results.forEach((result) => {
+      createHTML(result);
+    });
 }
 
 function createHTML(result) {

@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 import { validationUpdateProfile } from '../helpers/validation.js';
 
 const form = document.getElementById('form');
@@ -27,7 +28,7 @@ async function loadProfile() {
   const id = localStorage.getItem('id');
 
   try {
-    await fetch(`https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`, config)
+    await fetch(`${url_backend}/api/employees/profile/${id}`, config)
       .then((answer) => answer.json())
       .then((results) => {
         completeResults(results);
@@ -67,7 +68,7 @@ function eventUpdate() {
   try {
     if (validationUpdateProfile(name, lastname, password, phone)) {
       fetch(
-        `https://novashopbackend-production.up.railway.app/api/employees/profile/${id}`,
+        `${url_backend}/api/employees/profile/${id}`,
         {
           method: 'PUT',
           body: JSON.stringify({ name, lastname, password, phone }),

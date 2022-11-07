@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 let articles = JSON.parse(localStorage.getItem('products')) || [];
 const divCartBody = document.getElementById('cart');
 
@@ -58,7 +59,7 @@ async function sendDistrict(district) {
   if (!token) return;
   const id = localStorage.getItem('id');
   await fetch(
-    `https://novashopbackend-production.up.railway.app/api/user/cart/${id}`,
+    `${url_backend}/api/user/cart/${id}`,
     {
       method: 'POST',
       body: JSON.stringify({ district }),

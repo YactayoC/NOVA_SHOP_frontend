@@ -1,3 +1,4 @@
+import { url_backend } from "../url.js";
 const text = document.getElementById('text');
 const button = document.getElementById('button');
 
@@ -7,7 +8,7 @@ const querystring = window.location.search;
 const id = querystring.substring(2);
 
 async function confirmToken() {
-  await fetch(`https://novashopbackend-production.up.railway.app/api/user/confirm/${id}`)
+  await fetch(`${url_backend}/api/user/confirm/${id}`)
     .then((answer) => answer.json())
     .then((results) => {
       text.textContent = results.msg;
